@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+# Start/Stops/Restarts. Script to be used with manage_my_process
+
+argv1=$1
+tmpfile="/var/run/my_process.pid"
+process_name="./manage_my_process"
+
+startLoop_n_createFile() 
+{
+    if [ -f "$tmpfile" ]; then
+        echo "Error: Process is already running."
+        exit 1
+    fi
+    exec "$process_name" &
+    echo "$!" > "$tmpfile"
+}
+
+killLoop_n_rmFile() 
+{
+    if [ -f "$tmpfile" ]; then
+        pkill -x "$(basename "$process_name")"
+        rm "$tmpfile"
+    else
+        echo "Error: Process is not running."
+    fi
+}
+
+case "$argv1" in
+    start)
+        echo "manage_my_process started"
+        startLoop_n_createFile
+        ;;
+    stop)
+        echo "manage_my_process stopped"
+        killLoop_n_rmFile
+        ;;
+    restart)
+        echo "manage_my_process restarted"
+        killLoop_n_rmFile
+        startLoop_n_createFile
+        ;;
+    *)
+        echo "Usage: manage_my_process {start|stop|restart}"
+        ;;
+esac
