@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Script that displays the content of the file /etc/passwd.
+
+# Function to extract and display user information
+display_user_info()
+{
+	local line=$1
+		IFS=':' read -r username _ uid _ homedir _ <<< "$line"
+		echo "$username:$uid:$homedir"
+}
+
+# Main script
+while IFS= read -r line; do
+	display_user_info "$line"
+done < /etc/passwd
