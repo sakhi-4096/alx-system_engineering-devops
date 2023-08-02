@@ -44,6 +44,7 @@ done
  * [Operators](https://tldp.org/LDP/abs/html/ops.html)
  * [Other Comparison Operators](https://tldp.org/LDP/abs/html/comparison-ops.html)
  * [File test operators](https://tldp.org/LDP/abs/html/fto.html)
- 
+ * [Make Linux/Unix Script Portable With #!/usr/bin/env As a Shebang](https://www.cyberciti.biz/tips/finding-bash-perl-python-portably-using-env.html)
+
 ## Contact
  * [Sakhile Ndlazi](https://www.twitter.com/sakhilelindah)
