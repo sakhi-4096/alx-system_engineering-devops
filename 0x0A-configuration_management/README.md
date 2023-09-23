@@ -1,7 +1,7 @@
 # Configuration management
 Configuration management refers to the practice of automating and managing the configuration of software and hardware systems in a consistent and reliable manner.
 
-![Configuration Management](https://www.google.com/url?sa=i&url=https%3A%2F%2Fspeakerdeck.com%2Ftessak22%2Fconfiguration-management-wordpress-configuration-in-code&psig=AOvVaw14Ehpnp3b1PCzGqCunwOzO&ust=1695482299731000&source=images&cd=vfe&opi=89978449&ved=0CA4QjRxqFwoTCMDj9oDCvoEDFQAAAAAdAAAAABAE)
+![Configuration Management](https://miro.medium.com/v2/resize:fit:640/format:webp/1*avk37KYCRMe8HRYcgdMJUA.jpeg)
 
 ## Description
 It is a crucial aspect of modern IT operations and system administration, especially in large and complex environments. Configuration management helps ensure that systems are correctly configured, stay compliant with desired standards, and can be easily maintained and scaled. Configuration management plays a critical role in DevOps practices, ensuring that code, infrastructure, and applications can be rapidly deployed, tested, and scaled while maintaining stability and compliance. It helps organizations achieve consistency, reliability, and efficiency in their IT operations.
