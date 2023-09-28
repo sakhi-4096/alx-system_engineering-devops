@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Transfer a file to a remote server using the SCP (Secure Copy Protocol) utility.
+
+if [ "$#" -lt 3 ]; then
+    echo "Usage: $0 LOCAL_FILE REMOTE_IP REMOTE_USERNAME [PATH_TO_SSH_KEY]"
+    exit 1
+fi
+
+LOCAL_FILE="$1"
+REMOTE_IP="$2"
+REMOTE_USERNAME="$3"
+PATH_TO_SSH_KEY="$4"
+
+# Check if the optional SSH key path is provided
+if [ -n "$PATH_TO_SSH_KEY" ]; then
+    scp -i "$PATH_TO_SSH_KEY" "$LOCAL_FILE" "$REMOTE_USERNAME@$REMOTE_IP":~
+else
+    scp "$LOCAL_FILE" "$REMOTE_USERNAME@$REMOTE_IP":~
+fi
+
