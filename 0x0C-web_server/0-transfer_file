@@ -13,8 +13,8 @@ PATH_TO_SSH_KEY="$4"
 
 # Check if the optional SSH key path is provided
 if [ -n "$PATH_TO_SSH_KEY" ]; then
-    scp -i "$PATH_TO_SSH_KEY" "$LOCAL_FILE" "$REMOTE_USERNAME@$REMOTE_IP":~
+    scp -i "$PATH_TO_SSH_KEY" -o StrictHostKeyChecking=no "$LOCAL_FILE" "$REMOTE_USERNAME@$REMOTE_IP":~/
 else
-    scp "$LOCAL_FILE" "$REMOTE_USERNAME@$REMOTE_IP":~
+    scp -o StrictHostKeyChecking=no "$LOCAL_FILE" "$REMOTE_USERNAME@$REMOTE_IP":~/
 fi
 
