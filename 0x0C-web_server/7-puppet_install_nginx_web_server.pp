@@ -1,38 +1,27 @@
-# Install Nginx package
+# Script to install nginx using puppet
+
 package { 'nginx':
-  ensure => 'installed',
+  ensure => 'present',
 }
 
-# Create the index.html file
-file { '/var/www/html/index.html':
-  ensure  => 'file',
-  content => 'Hello World!',
+exec { 'install':
+  command  => 'sudo apt-get update ; sudo apt-get -y install nginx',
+  provider => shell,
 }
 
-# Configure Nginx
-file { '/etc/nginx/sites-available/default':
-  ensure  => 'file',
-  content => "
-    server {
-        listen 80 default_server;
-        server_name _;
-
-        location /redirect_me {
-            return 301 https://youtube.com/;
-        }
-    }
-  ",
-  notify  => Service['nginx'],
+exec { 'Hello':
+  command  => 'echo "Hello World!" | sudo tee /var/www/html/index.html',
+  provider => shell,
 }
 
-# Enable and start Nginx service
-service { 'nginx':
-  ensure => 'running',
-  enable => true,
+exec { 'configure_redirect':
+  command  => 'sudo sed -i "s/listen 80 default_server;/listen 80 default_server;\\n\\tlocation \/redirect_me {\\n\\t\\treturn 301 https:\/\/google.com\/;\\n\\t}/" /etc/nginx/sites-available/default',
+  provider => shell,
+  require  => Exec['install'], # Ensure that 'install' is executed before configuring redirect
 }
 
-# Restart Nginx when the configuration file changes
-file { '/etc/nginx/sites-available/default':
-  require => Service['nginx'],
-  notify  => Service['nginx'],
+exec { 'run':
+  command  => 'sudo service nginx restart',
+  provider => shell,
+  require  => Exec['configure_redirect'], # Ensure that 'configure_redirect' is executed before restarting Nginx
 }
