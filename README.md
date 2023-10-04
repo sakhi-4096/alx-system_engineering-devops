@@ -2,10 +2,10 @@
  * **System Engineering** is a multidisciplinary approach to designing, building, and managing complex systems.
  * **DevOps**, short for Development and Operations, is a set of practices, principles, and cultural philosophies aimed at improving collaboration and communication between development (Dev) and IT operations (Ops) teams.
 
+![DevOps meme](https://img.devrant.com/devrant/rant/r_1075981_n88hw.jpg)
+
 ![Repo size](https://img.shields.io/github/repo-size/sakhi-4096/alx-system_engineering-devops)
 ![Latest commit](https://img.shields.io/github/last-commit/sakhi-4096/alx-system_engineering-devops/master?style=round-square)
-
-![DevOps meme](https://img.devrant.com/devrant/rant/r_1075981_n88hw.jpg)
 
 ## Description
  * System engineers work on projects that can range from developing large-scale software applications to designing complex hardware systems, such as aircraft or telecommunications networks. Their focus is on achieving a well-defined set of requirements while considering factors like performance, reliability, and scalability.
