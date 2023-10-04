@@ -26,8 +26,8 @@ string_for_header="add_header X-Served-By \$hostname;"
 string_for_redirect="location /redirect_me {\n\treturn 301 https://www.google.com;\n}"
 
 # Append the header and redirect configurations to the Nginx configuration file
-sudo sed -i "s@server_name _;@$string_for_header\n\tserver_name _;@" /etc/nginx/nginx.conf
-sudo sed -i "s@#error_page 404 /404.html;@$string_for_redirect\n\n\t#error_page 404 /404.html;@" /etc/nginx/nginx.conf
+sudo sed -i "s@server_name _;@$string_for_header\n\tserver_name _;@" /etc/nginx/sites-enabled/default
+sudo sed -i "s@#error_page 404 /404.html;@$string_for_redirect\n\n\t#error_page 404 /404.html;@" /etc/nginx/sites-enabled/default
 
 # Restart the web server after updating the settings
 sudo service nginx restart
