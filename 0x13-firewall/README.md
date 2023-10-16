@@ -1,6 +1,8 @@
 # Firewall
 A firewall is a network security device or software that acts as a barrier between a trusted internal network (like your company's private network or your home network) and untrusted external networks, such as the internet.
 
+![Firewall](https://i.imgflip.com/51q3if.jpg)
+
 ## Description
 Its primary purpose is to monitor and control incoming and outgoing network traffic to protect the internal network from unauthorized access, cyberattacks, or the spread of malicious software. Firewalls work by analyzing data packets as they traverse the network and applying a set of predefined security rules. These rules determine whether a packet is allowed to pass through or should be blocked based on factors such as source and destination IP addresses, port numbers, and the type of protocol being used. Firewalls are a critical component of network security and are used in various environments, including homes, businesses, and data centers, to help safeguard networks from cyber threats and maintain data integrity and confidentiality.
 
