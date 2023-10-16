@@ -1,7 +1,7 @@
 # Web stack debugging
 A process of identifying, analyzing, and resolving issues or bugs in a web application or web service.
 
-![Debugging](https://media.licdn.com/dms/image/D4D12AQHp8mK-ArNpmg/article-cover_image-shrink_600_2000/0/1684141461551?e=2147483647&v=beta&t=zXIeemlCWpTmEA05DLL-aHxiItaiKDumj1oeRoKb3Xo)
+![Debugging](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-sysadmin_devops/287/99littlebugsinthecode-holberton.jpg)
 
 ## Description
 The web stack typically includes several layers or components, and debugging may involve investigating issues at any of these layers.  It involves tracing the flow of data and code through the various components of the web stack to pinpoint the root cause of problems that affect the application's functionality, performance, or security. Web stack debugging can be a complex and time-consuming process, especially in distributed and microservices-based architectures. Effective debugging requires a systematic approach, collaboration among team members, and a good understanding of the web stack components and their interactions.
