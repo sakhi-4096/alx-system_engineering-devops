@@ -20,7 +20,7 @@ def display_employee_todos(employee_id):
     completed_tasks = [task.get("title")
                        for task in todos if task.get("completed")]
 
-    print(f"Employee {user_info.get('name')} has completed
+    print(f"Employee {user_info.get('name')} has completed \
           {len(completed_tasks)} tasks out of {len(todos)}: ")
     [print(f"\t{task}") for task in completed_tasks]
 
