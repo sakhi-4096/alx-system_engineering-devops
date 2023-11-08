@@ -19,33 +19,66 @@ def count_words(subreddit, word_list, after='', word_dict=None):
         None: This function prints the sorted count of keywords.
     """
 
-    if word_dict is None:
-        word_dict = {word.lower(): 0 for word in word_list}
-
-    if after is None:
-        sorted_word_dict = sorted(
-            word_dict.items(), key=lambda x: (-x[1], x[0]))
-        for word, count in sorted_word_dict:
-            if count:
-                print(f"{word}: {count}")
-        return None
-
-    url = f'https://www.reddit.com/r/{subreddit}/hot/.json'
-    headers = {'User-Agent': 'redquery'}
-    params = {'limit': 100, 'after': after}
+    # Initialize instances as an empty dictionary if not provided.
+    if instances is None:
+        instances = {}
+    # Define the URL for the Reddit API request.
+    url = f"https://www.reddit.com/r/{subreddit}/hot/.json"
+    # Set request headers with a user-agent.
+    headers = {
+        "User-Agent": "linux:0x16.api.advanced:v1.0.0 (by /u/No-File-2963)"}
+    # Define parameters for the API request.
+    params = {
+        "after": after,
+        "count": count,
+        "limit": 100
+    }
+    # Send a GET request to the Reddit API.
     response = requests.get(url, headers=headers,
                             params=params, allow_redirects=False)
 
-    if response.status_code != 200:
-        return None
+    try:
+        # Try to parse the API response.
+        results = response.json()
 
-    data = response.json().get('data', {})
-    children = data.get('children', [])
-    after = data.get('after')
+        # Check for a 404 response (invalid subreddit).
+        if response.status_code == 404:
+            raise Exception
 
-    for post in children:
-        title = post.get('data', {}).get('title', '').lower()
-        for word in word_dict:
-            word_dict[word] += title.count(word)
+    except Exception:
+        # Handle exceptions (e.g., invalid subreddit or parsing error).
+        print("")
+        return
 
-    count_words(subreddit, word_list, after, word_dict)
+    # Extract the relevant data from the API response.
+    data = results.get("data")
+    after = data.get("after")
+    count += data.get("dist")
+
+    # Process each post in the response.
+    for c in data.get("children"):
+        title = c.get("data").get("title").lower().split()
+
+        # Iterate over the words in the word_list.
+        for word in word_list:
+            if word.lower() in title:
+                times = title.count(word.lower())
+
+                if word not in instances:
+                    instances[word] = times
+                else:
+                    instances[word] += times
+
+    if after is None:
+        if not instances:
+            print("")
+            return
+
+        # Sort and print the word counts.
+        instances = sorted(instances.items(), key=lambda kv: (-kv[1], kv[0]))
+        for k, v in instances:
+            print(f"{k}: {v}")
+
+    else:
+        # Continue to the next page of results.
+        count_words(subreddit, word_list, instances, after, count)
