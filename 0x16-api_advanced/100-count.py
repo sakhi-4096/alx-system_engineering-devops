@@ -14,7 +14,7 @@ def count_words(subreddit, word_list, after='', word_dict=None):
         subreddit (str): The name of the subreddit to query.
         word_list (list): A list of keywords to count in the article titles.
         after (str, optional): A token used to fetch the next page of results.
-        word_dict (dict, optional): A dictionary to store the counts of keywords.
+        word_dict (dict, optional): A dictionary to store the countskeywords.
     Returns:
         None: This function prints the sorted count of keywords.
     """
