@@ -13,7 +13,7 @@ def recurse(subreddit, hot_list=None, after="", count=0):
     url = f"https://www.reddit.com/r/{subreddit}/hot/.json"
     headers = {
         "User-Agent": "0x16-api_advanced:project:v1.0.0\
-            (by /u/firdaus_cartoon_jr)"}
+            (by /u/No-File-2963)"}
     params = {"after": after, "count": count, "limit": 100}
 
     response = requests.get(url, headers=headers,
