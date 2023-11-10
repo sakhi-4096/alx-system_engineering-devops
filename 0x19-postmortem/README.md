@@ -1,6 +1,8 @@
 # Postmortem
 The Great Emoji Apocalypse
 
+![Postmoterm meme](https://miro.medium.com/v2/resize:fit:722/1*UMbzBQPkQXJ__OplyK7pNg.jpeg)
+
 ## Issue Summary:
 * **Duration:**
 Start Time: October 31, 2023, 12:00 PM (UTC)
