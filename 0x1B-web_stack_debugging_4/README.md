@@ -18,7 +18,6 @@ The web stack typically includes several layers or components, and debugging may
  * [First 5 Commands When I Connect on a Linux Server](https://www.youtube.com/watch?v=1_gqlbADaAw)
  * [What is a web server?](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_web_server)
  * [Web server](https://en.wikipedia.org/wiki/Web_server)
- * []
 
 ## Contact
- * [Sakhile Ndlazi](https://www.twitter.com/sakhilelindah)
+ * * [Twitter](https://www.twitter.com/sakhilelindah) / [Github](https://github.com/sakhi-4096)
