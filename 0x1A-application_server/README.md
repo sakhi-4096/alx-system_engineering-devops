@@ -26,8 +26,6 @@ An application server plays a crucial role in the deployment and execution of so
  * [Running gunicorn](https://docs.gunicorn.org/en/latest/run.html)
  * [Upstart](https://doc.ubuntu-fr.org/upstart)
  * [Trailing slash in Flask route](https://stackoverflow.com/questions/40365390/trailing-slash-in-flask-route)
- * 
-
 
 ## Contact
  * [Twitter](https://www.twitter.com/sakhilelindah) / [Github](https://github.com/sakhi-4096)
